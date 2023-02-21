@@ -4,13 +4,13 @@ let itemnumber = 5;
 async function init() {
 
   function createHtml(everyRowColumnNumber) {
-    var pokemonCount = POKEMONS.length;
-    var everyRowItemNumber = (pokemonCount / everyRowColumnNumber) + (pokemonCount % everyRowColumnNumber)
+    let pokemonCount = POKEMONS.length;
+    let everyRowItemNumber = (pokemonCount / everyRowColumnNumber) + (pokemonCount % everyRowColumnNumber)
     return newContainer(everyRowItemNumber,everyRowColumnNumber);
   }
 
   function newContainer(everyRowItemNumber,everyRowColumnNumber) {
-    var conatiner = document.createElement("div");//createing a new container
+    let conatiner = document.createElement("div");//createing a new container
     conatiner.className = "container"
     conatiner.appendChild(newHeader())
     conatiner.appendChild(newMain(everyRowItemNumber,everyRowColumnNumber))   
@@ -18,21 +18,21 @@ async function init() {
   }
 
   function newHeader() {
-    var header = document.createElement("header");//creating a new header
-    var h1 = document.createElement("h1");//creating a new h1
+    let header = document.createElement("header");//creating a new header
+    let h1 = document.createElement("h1");//creating a new h1
     h1.textContent = "Pokedex!"
     header.appendChild(h1)
     return header
   }
 
   function newMain(everyRowItemNumber,everyRowColumnNumber) {
-    var main = document.createElement("main");//creating a new main
-    var counter=0
-    for(var i = 0 ; i < everyRowItemNumber ; i++){
-      var ul = newRow();
+    let main = document.createElement("main");//creating a new main
+    let counter=0
+    for(let i = 0 ; i < everyRowItemNumber ; i++){
+      let ul = newRow();
       
-      for(var j = 0 ; j< everyRowColumnNumber ; j++){
-        var li = newColumn(counter)
+      for(let j = 0 ; j< everyRowColumnNumber ; j++){
+        let li = newColumn(counter)
         counter++
         ul.appendChild(li); 
       }
@@ -43,7 +43,7 @@ async function init() {
   }
 
   function newRow() {
-    var ul = document.createElement("ul");//creating a new ul
+    let ul = document.createElement("ul");//creating a new ul
     return ul
   }
 
